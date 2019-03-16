@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "title": "Star Wars",
+    "genres": [
+      { "name": "Sci-Fi" },
+      { "name": "Adventure" }
+    ],
+    "director": {
+      "firstName": "George",
+      "lastName": "Lucas"
+    },
+    "releaseDate": "25 May 1977"
+  },
+  {
+    "id": 2,
+    "title": "Empire Strikes Back",
+    "genres": [
+      { "name": "Sci-Fi" },
+      { "name": "Adventure" }
+    ],
+    "director": {
+      "firstName": "Irvin",
+      "lastName": "Kershner"
+    },
+    "releaseDate": "21 May 1980"
+  },
+  {
+    "id": 3,
+    "title": "Return of the Jedi",
+    "genres": [
+      { "name": "Sci-Fi" }
+    ],
+    "director": {
+      "firstName": "Richard",
+      "lastName": "Marquand"
+    },
+    "releaseDate": "25 May 1983"
+  }
+]
