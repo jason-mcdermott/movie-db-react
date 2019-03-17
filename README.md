@@ -1,2 +1,2 @@
 # movie-db-react
-Movie Db app to play around with React + .NET Core
+Movie database app with React + .NET Core
