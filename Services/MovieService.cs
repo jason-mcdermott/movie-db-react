@@ -25,5 +25,15 @@ namespace MovieDb.Services
         {
             return _repository.GetMovieList().Where(m => m.Id == id).FirstOrDefault();
         }
+
+        public IEnumerable<Movie> GetMoviesByDirector(int directorId)
+        {
+            return _repository.GetMovieList().Where(m => m.Director.Id == directorId);
+        }
+
+        public IEnumerable<Movie> GetMoviesByGenre(int genreId)
+        {
+            return _repository.GetMovieList().Where(m => m.Genres.Any(g => g.Id == genreId));
+        }
     }
 }

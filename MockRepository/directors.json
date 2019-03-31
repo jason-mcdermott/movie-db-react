@@ -1,15 +1,18 @@
 [
   {
+    "id": 1,
     "firstName": "George",
     "lastName": "Lucas",
-    "yearsActive":  "1976 - present"
+    "yearsActive": "1976 - present"
   },
   {
+    "id": 2,
     "firstName": "Irvin",
     "lastName": "Kershner",
     "yearsActive": "1955 - 2010"
   },
   {
+    "id": 3,
     "firstName": "Richard",
     "lastName": "Marquand",
     "yearsActive": "1978 - 1987"

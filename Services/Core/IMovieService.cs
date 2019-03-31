@@ -5,7 +5,13 @@ namespace MovieDb.Services.Core
 {
     public interface IMovieService
     {
-        IEnumerable<Movie> GetAvailableMovies();
         Movie GetMovie(int id);
+
+        IEnumerable<Movie> GetAvailableMovies();
+        
+
+        IEnumerable<Movie> GetMoviesByDirector(int directorId);
+
+        IEnumerable<Movie> GetMoviesByGenre(int genreId);
     }
 }

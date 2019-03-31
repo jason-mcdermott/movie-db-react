@@ -3,10 +3,18 @@
     "id": 1,
     "title": "Star Wars",
     "genres": [
-      { "name": "Sci-Fi" },
-      { "name": "Adventure" }
+      {
+
+        "id": 1,
+        "name": "Sci-Fi"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      }
     ],
     "director": {
+      "id": 1,
       "firstName": "George",
       "lastName": "Lucas"
     },
@@ -16,10 +24,18 @@
     "id": 2,
     "title": "Empire Strikes Back",
     "genres": [
-      { "name": "Sci-Fi" },
-      { "name": "Adventure" }
+      {
+
+        "id": 1,
+        "name": "Sci-Fi"
+      },
+      {
+        "id": 2,
+        "name": "Adventure"
+      }
     ],
     "director": {
+      "id": 2,
       "firstName": "Irvin",
       "lastName": "Kershner"
     },
@@ -29,9 +45,14 @@
     "id": 3,
     "title": "Return of the Jedi",
     "genres": [
-      { "name": "Sci-Fi" }
+      {
+
+        "id": 1,
+        "name": "Sci-Fi"
+      }
     ],
     "director": {
+      "id": 3,
       "firstName": "Richard",
       "lastName": "Marquand"
     },

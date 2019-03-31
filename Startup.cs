@@ -8,7 +8,7 @@ using MovieDb.Attributes;
 using MovieDb.MockRepository.Core;
 using MovieDb.Services;
 using MovieDb.Services.Core;
-using ShoppingCart.MockRepository;
+using MovieDb.MockRepository;
 
 namespace MovieDb
 {
