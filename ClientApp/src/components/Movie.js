@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 
-export class DirectorList extends Component {
-    displayName = DirectorList.name
+export class Movie extends Component {
+    displayName = Movie.name
 
   constructor(props) {
     super(props);
-    this.state = {
-        directors: [],
-        loading: true
-    };
+      this.state = {
+          movie: {},
+          loading: true
+      };
 
     this.displayDirector = this.displayDirector.bind(this);
     this.goBack = this.goBack.bind(this);
 
-    fetch('api/director/list')
+    let id = this.props.match.params["id"];  
+
+    fetch(`api/movie/${id}`)
       .then(response => response.json())
       .then(data => {
-          this.setState({ directors: data, loading: false });
+          this.setState({ movie: data, loading: false });
       });
     }
 
@@ -30,40 +32,40 @@ export class DirectorList extends Component {
         this.props.history.goBack();
     }
 
-    static renderDirectorTable(self) {
+    static renderMovieTable(movie, self) {
         return (
           <table className='table'>
             <thead>
               <tr>
+                <th>Title</th>
                 <th>Director</th>
-                <th>Years Active</th>
+                <th>Release Date</th>
               </tr>
             </thead>
             <tbody>
-            {self.state.directors.map(director =>
-                <tr key={director.id}>
-                    <td><a href="" onClick={(e) => self.displayDirector(e, director.id)}>{director.name}</a></td>
-                    <td>{director.yearsActive}</td>
+                <tr key={movie.id}>
+                    <td>{movie.title}</td>
+                    <td><a href="" onClick={(e) => self.displayDirector(e, movie.director.id)}>{movie.director.name}</a></td>
+                    <td>{movie.releaseDate}</td>
                 </tr>
-              )}
             </tbody>
           </table>
         );
-    }
+      }
 
     render() {
-        let self = this;
+        var self = this;
         let contents = this.state.loading
             ? <p><em>Loading...</em></p>
-            : DirectorList.renderDirectorTable(self);
-
+            : Movie.renderMovieTable(this.state.movie, self);
+      
         return (
           <div>
-            <h1>Directors</h1>
+            <h1>Movie</h1>
             <p>Welcome to the Movie Database</p>
                 {contents}
             <Button className="button" onClick={this.goBack}>Back</Button>
           </div>
         );
-     }
+    }
 }
