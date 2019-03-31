@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using MovieDb.MockRepository.Core;
 using MovieDb.Models;
 
-namespace ShoppingCart.MockRepository
+namespace MovieDb.MockRepository
 {
     public class MovieRepository : IMovieRepository
     {

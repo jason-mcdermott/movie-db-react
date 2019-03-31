@@ -18,7 +18,7 @@ namespace MovieDb.Models
         public string ReleaseDate { get; set; }
 
         [JsonProperty("genres")]
-        public IList<Genre> Genres { get; set; }
+        public List<Genre> Genres { get; set; }
 
         [JsonProperty("director")]
         public Director Director { get; set; }

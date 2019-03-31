@@ -21,5 +21,12 @@ namespace MovieDb.Controllers
         {
             return _directorService.GetDirectors();
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        public Director Get(int id)
+        {
+            return _directorService.GetDirector(id);
+        }
     }
 }
