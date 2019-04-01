@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { BackButton } from './BackButton';
 
 export class Director extends Component {
-    displayName = Director.name
+  displayName = Director.name
 
   constructor(props) {
     super(props);
@@ -10,8 +10,6 @@ export class Director extends Component {
           director: {},
           loading: true
       };
-
-    this.goBack = this.goBack.bind(this);
 
     var id = this.props.match.params["id"];
 
@@ -21,11 +19,7 @@ export class Director extends Component {
           this.setState({ director: data, loading: false });
       });
     }
-
-    goBack() {
-        this.props.history.goBack();
-    }
-
+    
     static renderDirectorTable(director) {
         return (
           <table className='table'>
@@ -55,7 +49,7 @@ export class Director extends Component {
         <h1>Director</h1>
         <p>Welcome to the Movie Database</p>
             {contents}
-        <Button className="button" onClick={this.goBack}>Back</Button>
+        <BackButton history={this.props.history} />
       </div>
     );
   }
