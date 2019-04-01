@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { BackButton } from './BackButton';
 
 export class DirectorList extends Component {
-    displayName = DirectorList.name
+  displayName = DirectorList.name
 
   constructor(props) {
     super(props);
@@ -12,8 +12,7 @@ export class DirectorList extends Component {
     };
 
     this.displayDirector = this.displayDirector.bind(this);
-    this.goBack = this.goBack.bind(this);
-
+    
     fetch('api/director/list')
       .then(response => response.json())
       .then(data => {
@@ -25,11 +24,7 @@ export class DirectorList extends Component {
         e.preventDefault();
         this.props.history.push(`/director/${id}`);
     } 
-
-    goBack() {
-        this.props.history.goBack();
-    }
-
+    
     static renderDirectorTable(self) {
         return (
           <table className='table'>
@@ -62,7 +57,7 @@ export class DirectorList extends Component {
             <h1>Directors</h1>
             <p>Welcome to the Movie Database</p>
                 {contents}
-            <Button className="button" onClick={this.goBack}>Back</Button>
+            <BackButton history={this.props.history} />
           </div>
         );
      }

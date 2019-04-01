@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { BackButton } from './BackButton';
 
 export class MovieList extends Component {
-    displayName = MovieList.name
+  displayName = MovieList.name
 
   constructor(props) {
     super(props);
@@ -13,7 +13,6 @@ export class MovieList extends Component {
 
     this.displayMovie = this.displayMovie.bind(this);
     this.displayDirector = this.displayDirector.bind(this);
-    this.goBack = this.goBack.bind(this);
      
     fetch('api/movie/list')
       .then(response => response.json())
@@ -31,10 +30,6 @@ export class MovieList extends Component {
         e.preventDefault();
         this.props.history.push(`/director/${id}`);
     } 
-
-    goBack() {
-        this.props.history.goBack();
-    }
     
     static renderMovieTable(self) {
         return (
@@ -71,7 +66,7 @@ export class MovieList extends Component {
             <h1>Movies</h1>
             <p>Welcome to the Movie Database</p>
                 {contents}
-            <Button className="button" onClick={this.goBack}>Back</Button>
+            <BackButton history={this.props.history}/>
           </div>
         );
     } 
